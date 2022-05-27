@@ -1,23 +1,29 @@
-Steps followed:
+## Steps followed in this POC
 
 * Create a Github repository.
 * Clone it locally
-* Create AWS account
+* Create an AWS account
 * Make a disclaimer about costs and co - Set a budget to avoid bad surprises
 * Create access keys for CLI access: https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/security_credentials
 * Install the `aws` CLI and run:
 ```
 aws configure --profile my_aws_account
 ```
+
 * Create an SSH key in .pem format:
 ```
 ssh-keygen -m PEM
 ```
 
-* Install Terraform with tfswitch
+* Install Terraform with `tfswitch`
 * Add Terraform files to .gitignore
-* Deploy the Terraform config (input your public SSH key)
-* Connect to the instance using the outputed public IP with:
+```
+terraform.tfstate*
+.terraform
+```
+* Deploy the Terraform config (input your public SSH key and current IP)
+
+* Connect to the instance using the output EC2 instance public IP with:
 ```
 ssh -i <path to your .pem key> ec2-user@<public_ip>
 ```
