@@ -1,22 +1,10 @@
-provider "aws" {
-  region = "eu-west-1"
-}
-
-
-variable "your_public_ip" {
-  type = string
-}
-
-variable "public_ssh_key" {
-  type = string
-}
-
 resource "aws_instance" "airflow_server" {
 
   ami                    = "ami-0c1bc246476a5572b" # Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2 - in EU-WEST-1
   instance_type          = "t3.medium"
   key_name               = aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.main.id]
+  iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name
   
   root_block_device {
     volume_size = 15
@@ -72,8 +60,4 @@ resource "aws_security_group" "main" {
       self             = false
     }
   ]
-}
-
-output "ec2_instance_public_ip" {
-  value = aws_instance.airflow_server.public_ip
 }

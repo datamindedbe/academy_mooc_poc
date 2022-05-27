@@ -32,12 +32,10 @@ curl -sSf 'https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/
 
 ### Set up Airflow:
 
-* Run the Airflow initialization image:
+* Run the Airflow stack:
 ```
-docker-compose up airflow-init
+docker-compose up airflow-init && docker-compose up
 ```
 
-* Once done, run the whole stack:
-```
-docker-compose up
-```
+* Wait a few minutes and try to reach `<EC2 public IP>:8080`. Login with `airflow` as username and password.
+* Trigger the `smoke_test_dag` to make sure everything has been set up correctly.
