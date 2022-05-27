@@ -12,7 +12,6 @@ echo "Bootstrap the Airflow stack folder structure at the current location"
 # Create the Airflow stack prerequisites folders and upload the smoke test dag.
 mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)" > .env
-echo -e "AIRFLOW_GID=$(id -g)" >> .env
 
-curl -LfO 'https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/references/airflow/docker-compose.yaml'
-sudo curl -L https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/references/airflow/smoke_test_dag.py -o ./dags/smoke_test_dag.py
+curl -sfO 'https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/references/airflow/docker-compose.yaml'
+sudo curl -s https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/references/airflow/smoke_test_dag.py -o ./dags/smoke_test_dag.py
