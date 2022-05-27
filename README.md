@@ -24,12 +24,7 @@ ssh -i <path to your .pem key> ec2-user@<public_ip>
 
 * Install prerequisites with the following script:
 ```
-sudo yum update -y && \
-sudo amazon-linux-extras install -y docker && \
-sudo service docker start && \
-sudo usermod -a -G docker ec2-user && \
-sudo curl -L https://github.com/docker/compose/releases/download/v2.5.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose && \
-sudo chmod +x /usr/local/bin/docker-compose
+curl -sSf 'https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/references/airflow/pre-setup.sh' | bash -
 ```
 
 * Logout / Login to make permissions active
@@ -37,15 +32,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ### Set up Airflow:
 
-* First, create the required folders and files
-```
-mkdir -p ./dags ./logs ./plugins && \
-echo -e "AIRFLOW_UID=$(id -u)" > .env
-```
-
 * Download the Airflow Get Started Docker Compose:
 ```
-curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.3.1/docker-compose.yaml'
+curl -LfO 'https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/references/airflow/docker-compose.yaml'
 ```
 
 * Run the Airflow initialization image:
