@@ -32,11 +32,6 @@ curl -sSf 'https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/
 
 ### Set up Airflow:
 
-* Download the Airflow Get Started Docker Compose:
-```
-curl -LfO 'https://raw.githubusercontent.com/datamindedbe/academy_mooc_poc/main/references/airflow/docker-compose.yaml'
-```
-
 * Run the Airflow initialization image:
 ```
 docker-compose up airflow-init
