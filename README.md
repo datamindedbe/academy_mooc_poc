@@ -45,3 +45,4 @@ docker-compose up airflow-init && docker-compose up
 
 * Wait a few minutes and try to reach `<EC2 public IP>:8080`. Login with `airflow` as username and password.
 * Trigger the `smoke_test_dag` to make sure everything has been set up correctly.
+
