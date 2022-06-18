@@ -1,3 +1,6 @@
 terraform.tfstate*
 .terraform
 .venv
+
+# Data folder
+references/imdb_dataset/data/**
