@@ -1,3 +1,12 @@
+## IMDB Dataset
+
+* The dataset is downloaded originally from: https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset/
+* An example EDA is conducted here: https://www.kaggle.com/code/surenj/movielens-eda
+
+The raw dataset from Kaggle is pre-processed to be made more lightweight using `references/imdb_dataset/prepare_from_raw.py`.
+Make sure you changed the code constants to match with the path where you stored the raw dataset before
+running the code. By default, it will expect a `data` folder located alongside itself.
+
 ## Steps followed in this POC
 
 * Create a Github repository.

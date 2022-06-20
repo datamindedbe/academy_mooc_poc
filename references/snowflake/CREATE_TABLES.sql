@@ -19,8 +19,7 @@ create or replace table movies_metadata (
   tagline string,
   title string,
   video	string,
-  vote_average float,
-  vote_count int
+  vote_average float
 );
 
 CREATE OR REPLACE TABLE CREDITS (

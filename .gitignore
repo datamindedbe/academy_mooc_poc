@@ -4,3 +4,5 @@ terraform.tfstate*
 
 # Data folder
 references/imdb_dataset/data/**
+
+.DS_Store

@@ -1,13 +1,12 @@
-#%%
+import csv
+import json
 import pandas as pd
 from pathlib import Path
 import re
-import csv
-import json
 
 pd.set_option('display.max_columns', None)
 
-KAGGLE_DATASET = Path("~/Desktop/imdb_dataset")
+KAGGLE_DATASET = Path("./data")
 CREDITS_DATASET = KAGGLE_DATASET/Path("credits.csv")
 KEYWORDS_DATASET = KAGGLE_DATASET/Path("keywords.csv")
 MOVIES_METADATA_DATASET = KAGGLE_DATASET/Path("movies_metadata.csv")
